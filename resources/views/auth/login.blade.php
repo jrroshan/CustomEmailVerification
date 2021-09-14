@@ -6,9 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-                @include('includes.flash_message')
+                @include('includes.flash_messages')
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.validate') }}">
+                    <form method="POST" action="{{ route('validate') }}">
                         @csrf
                         <div class="form-group row">
                             <label for="email"

@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/login',[UsersController::class,'login'])->name('login');
 Route::post('/login/validate',[UsersController::class,'validateLogin'])->name('validate');
 
-Route::get('/create',[UsersController::class,'create'])->name('create');
-Route::get('/register',[UsersController::class,'register'])->name('register');
+// Route::get('/create',[UsersController::class,'create'])->name('create');
+Route::get('/register',[UsersController::class,'create'])->name('register');
 Route::post('/user/store',[UsersController::class,'store'])->name('store');
 Route::get('user/verify/{token}',[UsersController::class,'verifyEmail'])->name('verfiy');
